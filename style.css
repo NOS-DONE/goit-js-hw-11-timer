@@ -1,0 +1,23 @@
+.timer {
+  display: flex;
+}
+
+.value {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 55px;
+
+  background-color: rgb(88, 88, 88);
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 43px;
+}
+
+.field {
+  min-width: 65px;
+}
+
+.field:not(:first-child) {
+  margin-left: 10px;
+}
