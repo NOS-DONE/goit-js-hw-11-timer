@@ -3,22 +3,20 @@
     constructor({ selector, targetDate } ) {
         this.selector = selector;
         this.targetDate = targetDate;
+        this.timerRef = document.querySelector(`${this.selector}`);
+        this.daysFieldRef = this.timerRef.querySelector('[data-value="days"]');
+        this.hoursFieldRef = this.timerRef.querySelector('[data-value="hours"]');
+        this.minsFieldRef = this.timerRef.querySelector('[data-value="mins"]');
+        this.secsFieldRef = this.timerRef.querySelector('[data-value="secs"]');
         this.start();
     }
-
-
-    updateTimer({ days, hours, mins, secs }) {
-        const timerRef = document.querySelector(`${this.selector}`);
-        const daysFieldRef = timerRef.querySelector('[data-value="days"]');
-        const hoursFieldRef = timerRef.querySelector('[data-value="hours"]');
-        const minsFieldRef = timerRef.querySelector('[data-value="mins"]');
-        const secsFieldRef = timerRef.querySelector('[data-value="secs"]');
-        daysFieldRef.textContent = days;
-        hoursFieldRef.textContent = hours;
-        minsFieldRef.textContent = mins;
-        secsFieldRef.textContent = secs;
-    }
-
+     
+     updateTimer({ days, hours, mins, secs }) {
+        this.daysFieldRef.textContent = days;
+        this.hoursFieldRef.textContent = hours;
+        this.minsFieldRef.textContent = mins;
+        this.secsFieldRef.textContent = secs;
+     }
 
     start() {
          
